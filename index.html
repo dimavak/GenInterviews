@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Нина Терентьевна рассказывает</title>
+<meta name="description" content="Интервью с Ниной Терентьевной Авакян (Худобкиной), записанное внуком 5 декабря 2015 года: голос, расшифровка и семейные фотографии.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400&family=Alegreya+Sans:wght@400;500;700&family=Bad+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1 15 8 8 15 1 8Z' fill='%23a61e1c'/%3E%3Ccircle cx='8' cy='8' r='2.6' fill='%23e39a3b'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#transcript">Перейти к расшифровке</a>
+
+<header class="hero">
+  <div class="weave" aria-hidden="true"><span class="weave-by"></span><span class="weave-am"></span></div>
+
+  <div class="hero-top">
+    <p class="hero-kind">Интервью с&nbsp;бабушкой</p>
+    <h1>Нина Терентьевна</h1>
+    <p class="hero-sub">Авакян, в&nbsp;девичестве Худобкина. Родилась 11&nbsp;апреля 1936&nbsp;года в&nbsp;деревне Коповище под&nbsp;Полоцком.</p>
+    <p class="hero-about">Запись сделал внук Дима 5&nbsp;декабря 2015&nbsp;года в&nbsp;Полоцке. Почти полтора часа бабушка рассказывает о&nbsp;деревне и&nbsp;войне, о&nbsp;лагере в&nbsp;Австрии, о&nbsp;голодных годах, об&nbsp;Арташе и&nbsp;его армянской семье.</p>
+    <p class="hero-note">Расшифровка сделана с&nbsp;помощью распознавания речи и&nbsp;сверена вручную; имена и&nbsp;названия проверены, часть коротких мест ещё не&nbsp;проверена на&nbsp;слух.</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" id="startBtn" type="button">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
+        <span>Слушать с начала</span>
+      </button>
+      <button class="btn" id="resumeBtn" type="button" hidden></button>
+    </div>
+    <p class="hero-links">
+      <a href="#transcript">Показать текст целиком</a>
+      <a href="audio/interview.mp3" download>Скачать запись (mp3, 35&nbsp;МБ)</a>
+    </p>
+  </div>
+
+  <div class="hero-grid">
+    <figure class="line line-by">
+      <button class="print" data-photo="photos/parents.jpg" aria-label="Открыть фотографию: родители Нины">
+        <img src="photos/parents.jpg" alt="Ольга Ануфриевна и Терентий Борисович Худобкины" width="1400" height="1096">
+      </button>
+      <figcaption>
+        <span class="line-name">Худобкины</span>
+        <span class="line-place">Коповище, Полоцкий район</span>
+      </figcaption>
+    </figure>
+
+    <div class="hero-center">
+      <div class="union">
+        <svg class="emblem" id="emblem" viewBox="-60 -60 120 120" role="img" aria-label="Белорусский ромб и армянский знак вечности"></svg>
+        <p class="union-date">2 октября 1955</p>
+        <p class="union-note">свадьба Нины и&nbsp;Арташа</p>
+      </div>
+    </div>
+
+    <figure class="line line-am">
+      <button class="print" data-photo="photos/artash-1930s.jpg" aria-label="Открыть фотографию: Арташ в детстве с родными">
+        <img src="photos/avakyan-1930s.jpg" alt="Арташ в детстве с родными, 1930-е" width="735" height="1024">
+      </button>
+      <figcaption>
+        <span class="line-name">Авакяны</span>
+        <span class="line-place">Кошакэнт, Исмаиллинский район</span>
+      </figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+  <section class="towel" aria-labelledby="towel-h">
+    <div class="towel-head">
+      <h2 id="towel-h">Вся запись</h2>
+      <p>Каждый стежок — несколько секунд разговора. Цвет нитки показывает, о&nbsp;каком времени жизни идёт речь. Нажмите на&nbsp;любое место, чтобы слушать оттуда.</p>
+    </div>
+    <div class="towel-cloth">
+      <canvas id="band" class="band" tabindex="0" role="slider" aria-label="Место в записи" aria-valuemin="0" aria-valuemax="5021" aria-valuenow="0" aria-valuetext="0:00"></canvas>
+      <div class="band-tip" id="bandTip" hidden></div>
+    </div>
+    <ul class="threads" id="threads" aria-label="Периоды жизни"></ul>
+  </section>
+
+  <section class="life" aria-labelledby="life-h">
+    <div class="section-head">
+      <h2 id="life-h">Жизнь по годам</h2>
+      <p>Бабушка рассказывает не&nbsp;по&nbsp;порядку. Здесь всё разложено по&nbsp;времени: нажмите на&nbsp;событие, чтобы услышать, как она о&nbsp;нём говорит.</p>
+    </div>
+    <ol class="periods" id="periods"></ol>
+  </section>
+
+  <section class="reading" id="transcript" aria-labelledby="tr-h">
+    <div class="section-head">
+      <h2 id="tr-h">Рассказ целиком</h2>
+      <p>Речь бабушки записана русскими буквами, но&nbsp;так, как она звучит: с&nbsp;белорусским говором и&nbsp;трасянкой. Слова не&nbsp;исправлялись. Знак <span class="q">[?]</span> — слово расслышано неуверенно, <span class="unclear">[неразб.]</span> — место не&nbsp;удалось разобрать, <span class="ed">[= …]</span> — официальное название места. Нажмите на&nbsp;любую фразу, чтобы услышать её.</p>
+    </div>
+
+    <div class="reading-grid">
+      <nav class="rail" aria-labelledby="rail-h">
+        <button class="rail-toggle" id="railToggle" type="button" aria-expanded="false" aria-controls="chapterList">Главы</button>
+        <h3 id="rail-h" class="rail-title">Главы</h3>
+        <ol class="chapters" id="chapterList"></ol>
+      </nav>
+
+      <div class="text-col">
+        <div class="search" role="search">
+          <label for="q" class="visually-hidden">Найти в тексте</label>
+          <input id="q" type="search" placeholder="Найти в тексте: имя, деревню, слово" autocomplete="off">
+          <span class="search-count" id="qCount" aria-live="polite"></span>
+          <button class="btn btn-small" id="qPrev" type="button" aria-label="Предыдущее совпадение" disabled>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 10l5-5 5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+          </button>
+          <button class="btn btn-small" id="qNext" type="button" aria-label="Следующее совпадение" disabled>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+          </button>
+        </div>
+        <div class="text" id="text"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="album" aria-labelledby="album-h">
+    <h2 id="album-h">Семейный альбом</h2>
+    <ul class="album-page" id="album"></ul>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="weave weave-thin" aria-hidden="true"><span class="weave-by"></span><span class="weave-am"></span></div>
+</footer>
+
+<div class="player" id="player" role="region" aria-label="Проигрыватель">
+  <audio id="audio" preload="metadata" src="audio/interview.mp3"></audio>
+  <div class="player-row">
+    <button class="pbtn pbtn-main" id="playBtn" type="button" aria-label="Слушать">
+      <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
+      <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z"/></svg>
+    </button>
+    <button class="pbtn" id="backBtn" type="button" aria-label="Назад на 10 секунд">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4a6 6 0 1 1-5.6 3.9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.2 3.6l1.3 4.5 4.3-1.6" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="10" y="13.2" text-anchor="middle" font-size="6.5" fill="currentColor">10</text></svg>
+    </button>
+    <button class="pbtn" id="fwdBtn" type="button" aria-label="Вперёд на 10 секунд">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4a6 6 0 1 0 5.6 3.9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16.8 3.6l-1.3 4.5-4.3-1.6" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="10" y="13.2" text-anchor="middle" font-size="6.5" fill="currentColor">10</text></svg>
+    </button>
+    <div class="player-mid">
+      <div class="player-meta">
+        <span class="ptime" id="ptime">0:00</span>
+        <span class="pchapter" id="pchapter"></span>
+      </div>
+      <canvas id="miniBand" class="mini-band" aria-hidden="true"></canvas>
+    </div>
+    <button class="pbtn pbtn-text" id="speedBtn" type="button" aria-label="Скорость: обычная">1×</button>
+    <button class="pbtn" id="linkBtn" type="button" aria-label="Скопировать ссылку на этот момент">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M8.5 11.5a3.2 3.2 0 0 0 4.5 0l3-3a3.2 3.2 0 0 0-4.5-4.5l-1 1M11.5 8.5a3.2 3.2 0 0 0-4.5 0l-3 3a3.2 3.2 0 0 0 4.5 4.5l1-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <button class="follow" id="followBtn" type="button" hidden>К тому, что звучит сейчас</button>
+  <p class="toast" id="toast" role="status" aria-live="polite"></p>
+</div>
+
+<dialog class="lightbox" id="lightbox" aria-label="Фотография">
+  <form method="dialog"><button class="lb-close" aria-label="Закрыть">×</button></form>
+  <img id="lbImg" alt="">
+  <p class="lb-cap" id="lbCap"></p>
+  <button class="btn" id="lbListen" type="button" hidden>Слушать этот момент</button>
+</dialog>
+
+<script src="transcript.js"></script>
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
